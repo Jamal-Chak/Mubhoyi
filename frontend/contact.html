@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mubhoyi Events SA</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Override navbar background color */
+        .navbar {
+            background: rgba(184, 184, 209, 0.95) !important;
+            border-bottom: 2px solid hsl(240, 25%, 75%) !important;
+        }
+        
+        .page-hero {
+            background: linear-gradient(135deg, #b8b8d1 0%, hsl(240, 25%, 65%) 100%) !important;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, hsl(240, 25%, 70%) 0%, hsl(240, 25%, 65%) 100%) !important;
+        }
+        
+        /* Mobile menu background */
+        @media (max-width: 768px) {
+            .nav-menu {
+                background-color: #b8b8d1 !important;
+            }
+        }
+        
+        /* Contact page specific overrides */
+        .contact-info h2 {
+            color: hsl(240, 25%, 70%) !important;
+        }
+        
+        .contact-form h2 {
+            color: hsl(240, 25%, 70%) !important;
+        }
+        
+        .contact-item {
+            border: 2px solid #b8b8d1 !important;
+        }
+        
+        .contact-item:hover {
+            border-color: hsl(240, 25%, 65%) !important;
+        }
+        
+        .contact-item i {
+            color: hsl(240, 25%, 70%) !important;
+        }
+        
+        .contact-form {
+            border: 2px solid #b8b8d1 !important;
+        }
+        
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            border: 2px solid #b8b8d1 !important;
+        }
+        
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            border-color: hsl(240, 25%, 70%) !important;
+        }
+        
+        .cta-button {
+            background-color: hsl(240, 25%, 70%) !important;
+            color: var(--white) !important;
+            border: 2px solid transparent !important;
+        }
+        
+        .cta-button:hover {
+            background: transparent !important;
+            border-color: hsl(240, 25%, 70%) !important;
+            color: hsl(240, 25%, 70%) !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Mubhoyi Events SA</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch to start planning your perfect event</p>
+        </div>
+    </section>
+
+    <section class="contact-page">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+27 12 345 6789</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@mubhoyieventssa.co.za</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Johannesburg, South Africa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h2>Send us a Message</h2>
+                    <form id="contactForm">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="tel" name="phone" placeholder="Your Phone">
+                        <select name="service" required>
+                            <option value="">Select Service</option>
+                            <option value="full-service">Full Service Event Management</option>
+                            <option value="catering">Catering & Bar Services</option>
+                            <option value="floral">Floral Design & Decor</option>
+                            <option value="rentals">Specialty Rental Decor</option>
+                        </select>
+                        <select name="event-type" required>
+                            <option value="">Event Type</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="private">Private Celebration</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea name="message" placeholder="Tell us about your event..." rows="5" required></textarea>
+                        <button type="submit" class="cta-button">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Sending...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mubhoyi Events SA. All rights reserved. | South Africa</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

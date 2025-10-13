@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Mubhoyi Events SA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Your style.css content */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #b8b8d1;
+            --secondary-color: hsl(240, 25%, 75%);
+            --accent-color: hsl(240, 25%, 65%);
+            --pastel-pink: hsl(240, 25%, 80%);
+            --pastel-blue: hsl(240, 25%, 70%);
+            --pastel-green: hsl(240, 25%, 90%);
+            --text-dark: hsl(240, 15%, 30%);
+            --text-light: hsl(240, 15%, 50%);
+            --background-light: hsl(240, 25%, 98%);
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: var(--background-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(184, 184, 209, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: var(--transition);
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: var(--white);
+            color: var(--pastel-blue);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Quote Builder */
+        .quote-builder {
+            padding: 4rem 0;
+            background-color: var(--background-light);
+        }
+
+        .quote-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .quote-header h2 {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--pastel-blue);
+        }
+
+        .quote-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .quote-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .quote-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Service Categories */
+        .service-category {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            border-left: 5px solid var(--pastel-blue);
+            border: 2px solid var(--primary-color);
+        }
+
+        .service-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(184, 184, 209, 0.3);
+            border-color: var(--accent-color);
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .category-header h3 {
+            margin: 0;
+            color: var(--pastel-blue);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .base-price {
+            background-color: var(--pastel-green);
+            color: var(--pastel-blue);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .service-options {
+            margin-top: 1rem;
+        }
+
+        .service-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .service-option:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            flex-grow: 1;
+        }
+
+        .checkbox-container input {
+            display: none;
+        }
+
+        .checkmark {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 4px;
+            margin-right: 12px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .checkbox-container input:checked + .checkmark {
+            background-color: var(--pastel-blue);
+            border-color: var(--pastel-blue);
+        }
+
+        .checkbox-container input:checked + .checkmark:after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .option-price {
+            color: var(--pastel-blue);
+            font-weight: 600;
+        }
+
+        /* Quote Summary */
+        .quote-summary {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .summary-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+            border-top: 4px solid var(--pastel-blue);
+            border: 2px solid var(--primary-color);
+        }
+
+        .total-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1.5rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--primary-color);
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .total-price .label {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .total-price .amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--pastel-blue);
+        }
+
+        .selected-services {
+            margin: 1.5rem 0;
+            text-align: left;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .selected-service {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .selected-service:last-child {
+            border-bottom: none;
+        }
+
+        .service-name {
+            flex-grow: 1;
+        }
+
+        .service-cost {
+            color: var(--pastel-blue);
+            font-weight: 600;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: var(--text-light);
+            font-style: italic;
+            padding: 1rem 0;
+        }
+
+        .quote-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .cta-button {
+            background-color: var(--pastel-blue);
+            color: var(--white);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            background: transparent;
+            border-color: var(--pastel-blue);
+            color: var(--pastel-blue);
+        }
+
+        .cta-button:disabled {
+            background-color: var(--primary-color);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .secondary-button {
+            background-color: transparent;
+            color: var(--pastel-blue);
+            border: 2px solid var(--pastel-blue);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .secondary-button:hover {
+            background-color: var(--pastel-green);
+            transform: translateY(-3px);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 15px;
+            width: 100%;
+            max-width: 700px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--primary-color);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--primary-color);
+            background-color: var(--pastel-green);
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            color: var(--pastel-blue);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .close-modal {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--text-dark);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--primary-color);
+        }
+
+        /* Invoice */
+        .invoice-details {
+            width: 100%;
+        }
+
+        .invoice-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .invoice-header h4 {
+            font-size: 1.8rem;
+            color: var(--pastel-blue);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .invoice-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .invoice-items {
+            margin-bottom: 2rem;
+        }
+
+        .invoice-items table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .invoice-items th, .invoice-items td {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .invoice-items th {
+            background-color: var(--pastel-green);
+            font-weight: 600;
+            color: var(--pastel-blue);
+        }
+
+        .total-row {
+            font-size: 1.1rem;
+        }
+
+        .invoice-notes {
+            background-color: var(--pastel-green);
+            padding: 1.5rem;
+            border-radius: 15px;
+        }
+
+        .invoice-notes ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .invoice-notes li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--pastel-blue) 0%, var(--accent-color) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--primary-color);
+                width: 100%;
+                text-align: center;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 1.5rem 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .modal-footer {
+                flex-direction: column;
+            }
+
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Mubhoyi Events SA</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Build your custom event package - select only what you need</p>
+        </div>
+    </section>
+
+    <!-- Custom Quote Builder -->
+    <section class="quote-builder">
+        <div class="container">
+            <div class="quote-header">
+                <h2>Build Your Custom Quote</h2>
+                <p>Select the services you need and see the  estimated price updated in real-time</p>
+            </div>
+            
+            <div class="quote-content">
+                <div class="services-selection">
+                    <!-- Full Service Event Management -->
+                    <div class="service-category" id="full-service">
+                        <div class="category-header">
+                            <h3>Full Service Event Management</h3>
+                            <span class="base-price">Base: R100</span>
+                        </div>
+                        <p>Complete end-to-end event planning and management</p>
+                        
+                        <div class="service-options">
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Event conceptualization and design" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Event conceptualization and design
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Budget planning and management" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Budget planning and management
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Vendor coordination and management" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Vendor coordination and management
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Timeline creation and execution" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Timeline creation and execution
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Day-of event coordination" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Day-of event coordination
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Catering & Bar Services -->
+                    <div class="service-category" id="catering">
+                        <div class="category-header">
+                            <h3>Catering & Bar Services</h3>
+                            <span class="base-price">Base: R100</span>
+                        </div>
+                        <p>Exceptional culinary experiences with professional bar services</p>
+                        
+                        <div class="service-options">
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Custom menu planning" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Custom menu planning
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Professional catering staff" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Professional catering staff
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Bar setup and management" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Bar setup and management
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Beverage package options" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Beverage package options
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Special dietary accommodations" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Special dietary accommodations
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floral Design & Decor -->
+                    <div class="service-category" id="floral">
+                        <div class="category-header">
+                            <h3>Floral Design & Decor</h3>
+                            <span class="base-price">Base: R100</span>
+                        </div>
+                        <p>Beautiful floral arrangements and decor to transform your venue</p>
+                        
+                        <div class="service-options">
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Custom floral arrangements" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Custom floral arrangements
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Venue decoration and styling" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Venue decoration and styling
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Theme-based design concepts" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Theme-based design concepts
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Setup and teardown services" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Setup and teardown services
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specialty Rental Decor -->
+                    <div class="service-category" id="rentals">
+                        <div class="category-header">
+                            <h3>Specialty Rental Decor</h3>
+                            <span class="base-price">Base: R100</span>
+                        </div>
+                        <p>Premium rental items to enhance your event experience</p>
+                        
+                        <div class="service-options">
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Furniture and linen rentals" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Furniture and linen rentals
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Lighting and audio equipment" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Lighting and audio equipment
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Specialty decor items" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Specialty decor items
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                            
+                            <div class="service-option">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" data-service="Delivery and setup included" data-price="100">
+                                    <span class="checkmark"></span>
+                                    Delivery and setup included
+                                </label>
+                                <span class="option-price">+ R100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote Summary -->
+                <div class="quote-summary">
+                    <div class="summary-card">
+                        <h3>Your Custom Quote</h3>
+                        <div class="total-price">
+                            <span class="label">Total Estimate:</span>
+                            <span class="amount" id="totalAmount">R0</span>
+                        </div>
+                        
+                        <div class="selected-services" id="selectedServices">
+                            <p class="empty-message">No services selected yet</p>
+                        </div>
+                        
+                        <div class="quote-actions">
+                            <button class="cta-button" id="getQuoteBtn" disabled>
+                                <i class="fas fa-file-invoice"></i>
+                                Get Detailed Quote
+                            </button>
+                            <button class="secondary-button" id="resetSelection">
+                                <i class="fas fa-redo"></i>
+                                Reset Selection
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Modal -->
+    <div class="modal" id="quoteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Your Custom Quote</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="invoice-details">
+                    <div class="invoice-header">
+                        <h4>Mubhoyi Events SA</h4>
+                        <p>Custom Event Services Quote</p>
+                        <p class="invoice-date" id="invoiceDate"></p>
+                    </div>
+                    
+                    <div class="invoice-items">
+                        <table id="invoiceTable">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="invoiceItems">
+                                <!-- Items will be populated by JavaScript -->
+                            </tbody>
+                            <tfoot>
+                                <tr class="total-row">
+                                    <td><strong>Total</strong></td>
+                                    <td><strong id="invoiceTotal">R0</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    
+                    <div class="invoice-notes">
+                        <p><strong>Notes:</strong></p>
+                        <ul>
+                            <li>This is a preliminary estimate</li>
+                            <li>Final pricing may vary based on specific requirements</li>
+                            <li>Valid for 30 days</li>
+                            <li>50% deposit required to secure services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-button" id="printQuote">
+                    <i class="fas fa-print"></i>
+                    Print Quote
+                </button>
+                <button class="cta-button" id="contactUs">
+                    <i class="fas fa-envelope"></i>
+                    Contact Us to Book
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mubhoyi Events SA. All rights reserved. | South Africa</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+            
+            // Quote calculation functionality
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const totalAmount = document.getElementById('totalAmount');
+            const selectedServices = document.getElementById('selectedServices');
+            const getQuoteBtn = document.getElementById('getQuoteBtn');
+            const resetBtn = document.getElementById('resetSelection');
+            const quoteModal = document.getElementById('quoteModal');
+            const closeModal = document.querySelector('.close-modal');
+            const printQuote = document.getElementById('printQuote');
+            const contactUs = document.getElementById('contactUs');
+            const invoiceItems = document.getElementById('invoiceItems');
+            const invoiceTotal = document.getElementById('invoiceTotal');
+            const invoiceDate = document.getElementById('invoiceDate');
+            
+            let selectedItems = [];
+            let total = 0;
+            
+            // Format currency
+            function formatCurrency(amount) {
+                return 'R' + amount.toLocaleString('en-ZA');
+            }
+            
+            // Update selected services and total
+            function updateQuote() {
+                total = 0;
+                selectedItems = [];
+                
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        const serviceName = checkbox.getAttribute('data-service');
+                        const servicePrice = parseInt(checkbox.getAttribute('data-price'));
+                        
+                        total += servicePrice;
+                        selectedItems.push({
+                            name: serviceName,
+                            price: servicePrice
+                        });
+                    }
+                });
+                
+                // Update total display
+                totalAmount.textContent = formatCurrency(total);
+                
+                // Update selected services list
+                if (selectedItems.length > 0) {
+                    selectedServices.innerHTML = '';
+                    selectedItems.forEach(item => {
+                        const serviceElement = document.createElement('div');
+                        serviceElement.className = 'selected-service';
+                        serviceElement.innerHTML = `
+                            <span class="service-name">${item.name}</span>
+                            <span class="service-cost">${formatCurrency(item.price)}</span>
+                        `;
+                        selectedServices.appendChild(serviceElement);
+                    });
+                } else {
+                    selectedServices.innerHTML = '<p class="empty-message">No services selected yet</p>';
+                }
+                
+                // Enable/disable get quote button
+                getQuoteBtn.disabled = selectedItems.length === 0;
+            }
+            
+            // Generate invoice
+            function generateInvoice() {
+                // Set current date
+                const now = new Date();
+                invoiceDate.textContent = `Generated: ${now.toLocaleDateString('en-GB')}`;
+                
+                // Clear previous items
+                invoiceItems.innerHTML = '';
+                
+                // Add selected items
+                selectedItems.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.name}</td>
+                        <td>${formatCurrency(item.price)}</td>
+                    `;
+                    invoiceItems.appendChild(row);
+                });
+                
+                // Update total
+                invoiceTotal.textContent = formatCurrency(total);
+                
+                // Show modal
+                quoteModal.style.display = 'flex';
+            }
+            
+            // Reset selection
+            function resetSelection() {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                updateQuote();
+            }
+            
+            // Event listeners
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateQuote);
+            });
+            
+            getQuoteBtn.addEventListener('click', generateInvoice);
+            
+            resetBtn.addEventListener('click', resetSelection);
+            
+            closeModal.addEventListener('click', function() {
+                quoteModal.style.display = 'none';
+            });
+            
+            printQuote.addEventListener('click', function() {
+                window.print();
+            });
+            
+            contactUs.addEventListener('click', function() {
+                // Redirect to contact page
+                window.location.href = 'contact.html';
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target === quoteModal) {
+                    quoteModal.style.display = 'none';
+                }
+            });
+            
+            // Initialize
+            updateQuote();
+        });
+    </script>
+</body>
+</html>

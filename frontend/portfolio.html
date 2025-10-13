@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mubhoyi Events SA</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Override navbar background color */
+        .navbar {
+            background: rgba(184, 184, 209, 0.95) !important;
+            border-bottom: 2px solid hsl(240, 25%, 75%) !important;
+        }
+        
+        .page-hero {
+            background: linear-gradient(135deg, #b8b8d1 0%, hsl(240, 25%, 65%) 100%) !important;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, hsl(240, 25%, 70%) 0%, hsl(240, 25%, 65%) 100%) !important;
+        }
+        
+        /* Mobile menu background */
+        @media (max-width: 768px) {
+            .nav-menu {
+                background-color: #b8b8d1 !important;
+            }
+        }
+        
+        /* Portfolio item gradients */
+        .portfolio-image {
+            background: linear-gradient(135deg, #b8b8d1 0%, hsl(240, 25%, 65%) 100%) !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Mubhoyi Events SA</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Portfolio</h1>
+            <p>See our recent events and specialized services</p>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <div class="container">
+            <div class="portfolio-grid">
+                <div class="portfolio-item" id="corporate">
+                    <div class="portfolio-image">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Corporate Events</h3>
+                    <p>Professional corporate gatherings and business functions</p>
+                </div>
+                <div class="portfolio-item" id="site-prep">
+                    <div class="portfolio-image">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Site Preparations</h3>
+                    <p>Complete site setup and preparation services</p>
+                </div>
+                <div class="portfolio-item" id="construction">
+                    <div class="portfolio-image">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Construction Events</h3>
+                    <p>Specialized events for construction industry</p>
+                </div>
+                <div class="portfolio-item" id="decor">
+                    <div class="portfolio-image">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Decor Services</h3>
+                    <p>Creative decoration and styling solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mubhoyi Events SA. All rights reserved. | South Africa</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

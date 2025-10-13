@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Mubhoyi Events SA</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Override navbar background color */
+        .navbar {
+            background: rgba(184, 184, 209, 0.95) !important;
+            border-bottom: 2px solid hsl(240, 25%, 75%) !important;
+        }
+        
+        .page-hero {
+            background: linear-gradient(135deg, #b8b8d1 0%, hsl(240, 25%, 65%) 100%) !important;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, hsl(240, 25%, 70%) 0%, hsl(240, 25%, 65%) 100%) !important;
+        }
+        
+        /* Mobile menu background */
+        @media (max-width: 768px) {
+            .nav-menu {
+                background-color: #b8b8d1 !important;
+            }
+        }
+        
+        /* About page specific overrides */
+        .about-image .image-placeholder {
+            background: linear-gradient(135deg, #b8b8d1 0%, hsl(240, 25%, 75%) 100%) !important;
+        }
+        
+        .about-text h2 {
+            color: hsl(240, 25%, 70%) !important;
+        }
+        
+        .about-text h3 {
+            color: hsl(240, 25%, 65%) !important;
+        }
+        
+        .about-text li strong {
+            color: hsl(240, 25%, 70%) !important;
+        }
+        
+        .about-text li {
+            border-bottom: 1px solid #b8b8d1 !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Mubhoyi Events SA</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>About Mubhoyi Events SA</h1>
+            <p>Creating unforgettable experiences across South Africa</p>
+        </div>
+    </section>
+
+    <section class="about-content">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Mubhoyi Events SA is a premier event planning company specializing in construction, corporate events, and private celebrations throughout South Africa. With years of experience and a passion for perfection, we transform your vision into reality.</p>
+                    
+                    <h3>What We Offer</h3>
+                    <ul>
+                        <li><strong>Event Planning</strong> - Comprehensive event management</li>
+                        <li><strong>Catering & Bar</strong> - Exceptional food and beverage services</li>
+                        <li><strong>Floral & Decor</strong> - Beautiful design and styling</li>
+                        <li><strong>Venue Selection</strong> - Perfect locations for every event</li>
+                        <li><strong>Post-Event Services</strong> - Complete wrap-up and feedback</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Event Planning Team</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mubhoyi Events SA. All rights reserved. | South Africa</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
